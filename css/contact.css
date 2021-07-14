@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+*{
+  marign: 0;
+  padding: 0;
+  /* color: #d9d9d9; */
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  widht: 100%;
+  height: 100%;
+  margin: 0px;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+}
+main{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background:white ;
+  color: black;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content::before{
+  position: absolute;
+  content: "";
+  top: -10px;
+  height: 2px;
+  width:100%;
+  background: #1a1a1a;
+}
+.box .content::after{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 15%;
+  background:#f12020;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #FF8C00;
+  color: black;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social .fa-facebook:hover{
+  background: #871198;
+  color:#4169E1;
+}
+.left .content .social .fa-twitter:hover{
+  background: #871198;
+  color:#00BFFF;
+}
+.left .content .social .fa-instagram:hover{
+  background: #871198;
+  color: #C71585;
+}
+.left .content .social .fa-youtube:hover{
+  background: #871198;
+  color: #FF0000;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #d9d9d9;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #871198;
+  color:white;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+  text-align: justify;
+}
+.center .content .phone{
+  margin: 10px 0;
+}
+.number{
+  padding-left: 50px;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color:#A52A2A;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 40%;
+  font-size: 1.0625rem;
+  background: #d9d9d9;
+  padding-left: 10px;
+  border: 1px solid #696969;
+  border-radius: 10px;
+}
+.right form input:focus, .right form textarea:focus{
+  outline-color: #A52A2A;
+}
+.right form input{
+  height: 35px;
+}
+.fpbtn button{
+  height: 40px;
+  width: 20vh;
+  margin: 1vh;
+  border: none;
+  outline:none;
+  background: #871198;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor:pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+  color: white;
+}
+.fpbtn button:hover{
+  background-color: black;
+  color:white;
+}
+.right form .fbtn button{
+  height: 40px;
+  width: 20%;
+  border-color:#dc3545;
+  outline:none;
+  background:white;
+  color: #dc3545;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor:pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.right form .fbtn button:hover{
+  color: white;
+  background-color: #dc3545;
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #FF8C00;
+}
+.bottom center span{
+  color :#A52A2A;
+}
+.bottom center a{
+  color:#2F4F4F;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  color: black;
+}
+@media screen and (max-width: 1800px){
+  main{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+    .main-content .box{
+      margin: 5px 0;
+    }
+}
+@media screen and (min-width: 800px){
+  main{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+    .main-content .box{
+      margin: 5px 0;
+    }
+}
+.links{
+  display: inline-block;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #8B0000;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}

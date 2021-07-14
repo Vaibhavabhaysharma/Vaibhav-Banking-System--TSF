@@ -1,0 +1,54 @@
+main {
+	font-size: 62.5%;
+}
+/* utility classes */
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.features-column {
+	background-color: #111;
+}
+.features-section h2 {
+	font-size: 2rem;
+	padding: 2rem;
+}
+.section-intro h5 {
+	font-size: 3rem;
+
+	padding: 1rem 0;
+}
+.section-intro p {
+	font-size: 1rem;
+}
+.row {
+	margin-bottom: 1.5rem;
+}
+.features {
+	margin-top: 2rem;
+}
+.blog-text {
+	padding: 3rem 3rem;
+}
+.blog-text h1 {
+	font-size: 3.1rem;
+	margin: 0 0 2rem;
+}
+.blog-text p {
+	font-size: 1.5rem;
+	margin: 0 0 25px;
+}
+.blog-img img {
+	border-radius: 2rem;
+}
+.icons i {
+	font-size: 2.4rem;
+	color: rgb(19, 220, 25);
+}
+.icons p {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
