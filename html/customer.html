@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>Vaibhav Bank | Customers</title>
+  <link rel="shortcut icon" type="image/png" href="../images/logo1.png">
+  <link href="carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/footer.css">
+  <script src="https://kit.fontawesome.com/02f035939d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="background-color:#871198!important">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Vaibhav Bank</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item ">
+              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <!-- <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Customer</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="features.html">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
+
+
+<section id="main" class="coloured-section" style=" padding:  50px 10%;" >
+    <br>
+    <h1 style="text-align: center;">Good People to Bank With</h1>
+</section>
+
+
+    <!-- Modal send money -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                            <div class="input-group mb-3">
+                            <input type="text" id="enterSName" class="form-control" placeholder="Sender's username"
+                                aria-label="Sender's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <b><span class="input-group-text">₹</span></b>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                aria-label="Amount">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                        Money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ol id="transaction-history-body">
+
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex">
+      <button class="btn btn-outline-danger me-2"style="margin: 0;position: absolute;left: 45.5%;transform: translateY(-50%);" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+    </div>
+    <br>
+    <br>
+    <div class="d-flex">
+      <button class="btn btn-outline-danger me-2" style="margin: 0;position: absolute;left: 44.5%;transform: translateY(-50%);" data-toggle="modal" data-target="#transactionHistory">See Transactions</a>
+    </div>
+    <br>
+
+    <!-- table  -->
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered" style="width: 100%;height: 90%;">
+                <thead>
+                    <tr class="table-danger">
+                        <th scope="col">SR. No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">E-mail ID</th>
+                        <th scope="col">Bank Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-light">
+                        <td scope="row">1</td>
+                        <td>Abin Varghese</td>
+                        <td>abin@gmail.com</td>
+                        <td>
+                            <p id="abinBankBalance">90500</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info"  >
+                        <td scope="row">2</td>
+                        <td>Aman Dakhera</td>
+                        <td>aman@gmail.com</td>
+                        <td>
+                            <p id="amandBankBalance">64000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">3</td>
+                        <td>Hitesh Harsh</td>
+                        <td>hitesh@gmail.com</td>
+                        <td>
+                            <p id="hiteshBankBalance">35000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">4</td>
+                        <td>Sahil Khandelwal</td>
+                        <td>sahil@gmail.com</td>
+                        <td>
+                            <p id="sahilBankBalance">434500</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">5</td>
+                        <td>Sarthak Arya</td>
+                        <td>sarthak@gmail.com</td>
+                        <td>
+                            <p id="sarthBankBalance">61000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">6</td>
+                        <td>Shivansh Khandelwal</td>
+                        <td>shivansh@gmail.com</td>
+                        <td>
+                            <p id="shivanshBankBalance">15000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td>7</td>
+                        <td>Soni Singh</td>
+                        <td>soni@gmail.com</td>
+                        <td>
+                            <p id="soniBankBalance">30000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">8</td>
+                        <td>Tanmay Prajapat</td>
+                        <td>tanmay@gmail.com</td>
+                        <td>
+                            <p id="tanmayBankBalance">60000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">9</td>
+                        <td>Vaishali Goyal </td>
+                        <td>vaishali@gmail.com</td>
+                        <td>
+                            <p id="vaishaliBankBalance">55000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td scope="row">10</td>
+                        <td>Yogya Chattwani</td>
+                        <td>yogya@gmail.com</td>
+                        <td>
+                            <p id="yogyaBankBalance">80000</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    </section>
+
+
+
+
+    <footer>
+        <div class="main-content">
+          <div class="left box">
+            <h2>About us</h2>
+            <div class="content">
+              <p>The Sparks Foundation. This brand new education nonprofit trying to sell students hope for successful future. Hope that they can rise out of any situation, regardless of where they came from. Whether it’s from a family with a less than ideal financial situation or a family that simply does not support where they want to go. Either way, The Sparks Foundation (or TSF) is for you.</p>
+              <div class="social">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-instagram"></span></a>
+                <a href="#"><span class="fa fa-youtube"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="center box">
+            <h2>Address</h2>
+            <div class="content">
+              <div class="place">
+                <span class="fa fa-map-marker-alt"></span>
+                <span class="text">Bambala, Sukhpuria, Sitapura, Jaipur</span>
+              </div>
+              <div class="phone">
+                <span class="fa fa-phone"></span>
+                <span class="text">+91-1234567809</span>
+              </div>
+              <div class="email">
+                <span class="fa fa-envelope"></span>
+                <span class="text">abc@example.com</span>
+              </div>
+            </div>
+          </div>
+          <div class="right box">
+            <h2>Contact us</h2>
+            <div class="content">
+              <form action="#">
+                <div class="email">
+                  <div class="text">Email *</div>
+                    <input type="email" required>
+                  </div>
+                  <div class="msg">
+                    <div class="text">Message *</div>
+                      <textarea rows="2" cols="25" required></textarea>
+                  </div>
+                  <div class="fbtn">
+                    <button type="submit" class="btn btn-success">Send</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div>
+            <span class="credit">Created by <a href="#">Vaibhav Sharma</a>|</span>
+            <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+</body>
+</html>
